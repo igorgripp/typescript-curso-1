@@ -1,3 +1,4 @@
+
 export abstract class View<T>{
 
   protected elemento: HTMLElement;
@@ -6,10 +7,11 @@ export abstract class View<T>{
     this.elemento = document.querySelector(seletor) as HTMLInputElement;
   }
 
+  
   update(model: T): void{
     const template = this.template(model);
     this.elemento.innerHTML = template;
-  }
+  } 
   
   protected abstract template(model: T): string;
 }
